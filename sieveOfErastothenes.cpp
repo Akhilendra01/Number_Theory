@@ -9,7 +9,7 @@ void sieve(ll n, vector<bool> &isPrime){
     isPrime[1]=false;
     for(ll i=2;i<=n;i++){
         if(isPrime[i]){
-            for(int j=i*i;j<=n;j+=i){
+            for(ll j=i*i;j<=n;j+=i){
                 isPrime[j]=false;
             }
         }
