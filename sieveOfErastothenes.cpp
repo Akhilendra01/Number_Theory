@@ -4,11 +4,12 @@ using namespace std;
 typedef long long ll;
 
 
-void sieve(ll n, vector<bool> &isPrime){
+void sieve(ll n, vector<bool> &isPrime, vector<ll> &primes){
     isPrime[0]=false; 
     isPrime[1]=false;
     for(ll i=2;i<=n;i++){
         if(isPrime[i]){
+            primes.push_back(i);
             for(ll j=i*i;j<=n;j+=i){
                 isPrime[j]=false;
             }
@@ -19,7 +20,9 @@ void sieve(ll n, vector<bool> &isPrime){
 int main(int argc, char const *argv[]){
 
     ll n; cin>>n;
-    vector<bool> isPrime(n, true) ; 
-    sieve(n, isPrime);
+    vector<bool> isPrime(n, true);
+    vector<ll> primes; 
+    sieve(n, isPrime, primes);
+    for(ll i=0;i<primes.size();i++)cout<<primes[i]<<" ";
     return 0;
 }
