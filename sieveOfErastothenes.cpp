@@ -20,7 +20,7 @@ void sieve(ll n, vector<bool> &isPrime, vector<ll> &primes){
 int main(int argc, char const *argv[]){
 
     ll n; cin>>n;
-    vector<bool> isPrime(n, true);
+    vector<bool> isPrime(n+1, true);
     vector<ll> primes; 
     sieve(n, isPrime, primes);
     for(ll i=0;i<primes.size();i++)cout<<primes[i]<<" ";
