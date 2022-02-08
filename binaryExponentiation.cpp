@@ -6,12 +6,12 @@ typedef long long ll;
 ll binaryExponentiation(ll base, ll power){
     ll res=1;
     while(power){
-        if(power%2){
+        if(power&1){
             res*=base;
             power --;
         }
         base*=base;
-        power/=2;
+        power>>=1;
     }
     return res;
 }
