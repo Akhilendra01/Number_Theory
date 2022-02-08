@@ -6,12 +6,12 @@ typedef long long ll;
 ll modularExponentiation(ll base, ll power, ll p){
     ll res=1;
     while(power){
-        if(power%2){
+        if(power&1){
             res=(res*base)%p;
             power --;
         }
         base=(base*base)%p;
-        power/=2;
+        power>>=1;
     }
     return res;
 }
